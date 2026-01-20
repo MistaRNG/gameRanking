@@ -127,6 +127,11 @@ tbody,
     0 0.186em 0.625em 0 rgba(0, 0, 0, 0.19);
   max-height: 0;
 }
+@media (min-width: 768px) {
+  #ranking .card .row {
+    flex-direction: row-reverse;
+  }
+}
 .ranking-title {
   max-width: 69em;
 }
@@ -232,4 +237,3 @@ footer {
     max-width: 100%;
   }
 }
-
