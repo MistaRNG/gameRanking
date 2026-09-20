@@ -50,11 +50,14 @@ body {
 /* Navbar */
 /* Shared navigation between the two ranking sites. */
 .navbar {
-  gap: 0.65rem 1.5rem;
+  min-height: 4rem;
   padding: 0.65rem 1rem;
 }
 .ranking-switch {
-  position: relative;
+  position: absolute;
+  top: 0.65rem;
+  left: 1rem;
+  width: 10.75rem;
   isolation: isolate;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -108,10 +111,9 @@ body {
     transition: none;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .navbar {
-    flex-direction: column;
-    gap: 0.4rem;
+    padding-top: 4rem;
   }
 }
 
