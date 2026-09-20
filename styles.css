@@ -48,6 +48,74 @@ body {
 }
 
 /* Navbar */
+/* Shared navigation between the two ranking sites. */
+.navbar {
+  gap: 0.65rem 1.5rem;
+  padding: 0.65rem 1rem;
+}
+.ranking-switch {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.2rem;
+  border: 1px solid #596067;
+  border-radius: 0.65rem;
+  background: #1b1e21;
+}
+.ranking-switch::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  left: 0.2rem;
+  width: calc(50% - 0.2rem);
+  border-radius: 0.4rem;
+  background: #ffc107;
+  transform: translateX(0);
+  transition: transform 200ms ease-in-out;
+}
+.ranking-switch[data-selection="games"]::before {
+  transform: translateX(100%);
+}
+.ranking-switch-link {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.4rem;
+  color: #d3d3d3;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  transition: color 200ms ease-in-out;
+}
+.ranking-switch-link:hover {
+  color: #fff;
+}
+.ranking-switch[data-selection="anime"] [data-ranking="anime"],
+.ranking-switch[data-selection="games"] [data-ranking="games"] {
+  color: #212529;
+}
+.ranking-switch-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ranking-switch::before,
+  .ranking-switch-link {
+    transition: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
+
 .nav-transparent {
   transition: 0.5s ease;
 }
